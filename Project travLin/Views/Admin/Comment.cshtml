@@ -1,0 +1,276 @@
+﻿
+@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_AdminPageLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+
+        #overlay {
+            height: 100vh;
+            width: 100%;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            visibility: hidden;
+            position: fixed;
+        }
+
+
+        .for button {
+            background-color: black;
+            color: white;
+            font-weight: 800px;
+            height: 50px;
+        }
+
+
+
+        .for table {
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px black;
+            /* border: 1px solid red; */
+            border-radius: 30px;
+            padding: 50px;
+            margin-left: 20%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        .for h1 {
+            /* background: rgb(246, 248, 244); */
+            /* border-color: red; */
+            color: white;
+            border-radius: 20px;
+            margin-left: 40%;
+            padding: 20px;
+            width: 350px;
+            font-size: 60px;
+        }
+
+        .for .col {
+            height: 30px;
+            width: 280px;
+            padding: 30px;
+            font-size: 30px;
+        }
+
+        .for input {
+            padding: 10px;
+            height: 40px;
+            width: 500px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 800px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   
+        <!-- ----------------------------------div total user place coment etc------------------------- -->
+        <h3 class="i-name">
+            States
+        </h3>
+
+        <div class="value">
+
+            <div class="val-box" style="width: 99%; text-align: center; justify-content: center;">
+
+
+
+
+
+                <!-- <button onclick="show()" class="val-box" style="transition: all 3s; text-align: center ; justify-content: center; font-weight: 800; font-size: 20px; background-color: #336ce8; color: white; box-shadow: 10px 10px 10px black;" > -->
+                <h1 style="font-size:50px;">
+                    All Comments
+                </h1>
+                <!-- </button> -->
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- ----------------------------------End div total user place coment etc------------------------- -->
+        <!-- ----------------------------------User Div------------------------- -->
+
+        <dir class="board">
+
+            <table style="width:100%;">
+
+                <thead>
+
+                    <tr>
+                        <td>
+                            Name of user
+                        </td>
+
+                        <td>
+                            user id
+                        </td>
+
+                        <td>
+                            Comment
+                        </td>
+
+
+                        <td>
+                            Comment id
+                        </td>
+
+                        <td>
+                            <!-- null -->
+                        </td>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td class="people">
+
+                            <div class="people-de">
+
+                                <h5>
+                                    The Jatin
+                                </h5>
+
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="people-des">
+
+                            <h5>
+                                514
+                            </h5>
+
+                        </td>
+
+                        <td class="active">
+                            <p>
+
+                                quis quam ullam reprehenderit, minus consequatur fugiat incidunt iure omnis similique quaerat. Minima voluptatem quod voluptates numquam amet deserunt enim ut id dignissimos dicta.
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="role">
+
+                            <p>
+                                1d445
+                            </p>
+
+                        </td>
+
+                        <td class="edit">
+                            <a href="#overlay" onclick="show()"><i class="fa-solid fa-trash-can"></i></a>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+                </tbody>
+
+            </table>
+
+
+        </dir>
+
+
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
+<script>
+
+    let pop = window.document.getElementsByClassName("overlay");
+
+
+            function show(){
+                window.document.getElementById('overlay').style.visibility='visible';
+
+
+
+                window.document.getElementById('overlay').style.zIndex='1';
+
+
+
+
+                // document.querySelector('overlay').classList.add('showovelay');
+
+            }
+
+
+
+                function hide(){
+                    window.document.getElementById('overlay').style.visibility='hidden';
+
+
+
+                    window.document.getElementById('overlay').style.zIndex='-1';
+
+
+
+
+                    // document.querySelector('overlay').classList.add('showovelay');
+
+                }
+
+
+
+
+</script>
+
+</html>
+

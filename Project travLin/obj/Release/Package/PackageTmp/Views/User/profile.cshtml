@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "profile";
+    //Layout = "~/Views/Shared/_Layoutuser.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <style>
+
+        body {
+            background-image: url("/Content/assets/img/home-bg.jpg");
+            background-size: cover;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mohammad Sahragard">
+    <title>Responsive Profile Page</title>
+    <!-- import font icon (fontawesome) -->
+    <script src="https://kit.fontawesome.com/b8b432d7d3.js" crossorigin="anonymous"></script>
+    
+    <!-- import css file (style.css) -->
+    <link rel="stylesheet" href="~/Content/CSS/pro_style.css">
+</head>
+<body style="background-image: url(/Content/assets/img/home-bg.jpg);" >
+    <div class="container">
+        <div class="profile-card" style="height: 100%; width:100% ;">
+
+            @{
+
+                if (ViewBag.user != null)
+                {
+
+
+                    foreach (var gam in ViewBag.user.Rows)
+                    {
+
+
+
+                        <div class="profile-header">
+                            <!-- profile header section -->
+                            <div class="main-profile">
+                                <div class="profile-image" style=" background: url('/Content/profile/@gam[5]') round;">
+
+
+                                </div>
+
+                                <div class="profile-names">
+
+
+                                    <h1 class="username">@gam[1]</h1>
+
+
+                                    <small class="page-title">@gam[2]</small>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+                }
+
+
+
+                        <div class="profile-body">
+                            <!-- profile body section -->
+                            <div class="profile-actions">
+                                <a href="/home/logout/">
+                                    <button class="follow" style=" text-decoration:none; width:150px;">Log Out</button>
+                                    </a>
+                                    <a href="/user/index/">
+                                        <button class="message" style="width:150px; text-decoration:none;">Home</button>
+                                    </a>
+</div>
+
+                            <div class="account-info">
+
+                                <div class="data">
+
+
+
+                                    @{
+
+                                        if (ViewBag.user != null)
+                                        {
+
+
+                                            foreach (var gam in ViewBag.user.Rows)
+                                            {
+
+                                                <form style="padding:10px;" method="post">
+
+                                                    <b>
+                                                        <h1 style="margin-top:10px; margin-bottom:10px; font-size:40px; text-decoration:underline;">
+                                                            Contact Us
+                                                        </h1>
+                                                    </b>
+
+
+                                                    <div class="mb-3" style="visibility:hidden;">
+
+                                                        <label for="name" class="form-label" style="font-size:25px;">name</label>
+
+                                                        <input readonly name="name" type="text" class="control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 35rem; margin-left: 10px; text-align: center; color: white; background-color: rgba(0,0,0,20%);  height: 2rem; font-size: 15px; border-radius: 5PX; margin-bottom: 10px;" value="@gam[1]">
+
+
+
+                                                    </div>
+
+
+
+
+                                                    <div class="mb-3">
+
+                                                        <label for="mail" class="form-label" style="font-size:25px;">Email address</label>
+
+                                                        <input readonly name="mail" type="email" class="control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 35rem; margin-left: 10px; text-align: center; color: white; background-color: rgba(0,0,0,20%);  height: 2rem; font-size: 15px; border-radius: 5PX; margin-bottom: 10px;" value="@gam[2]">
+
+
+
+                                                    </div>
+
+                                                    <div class="mb-3">
+
+
+                                                        <label for="message" class="form-label" style="font-size:25px;">You'r Message</label>
+
+
+                                                        <input name="message" type="text" class="control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 35rem; margin-left: 10px; text-align: center; color: white; background-color:rgba(0,0,0,20%);  height: 10rem; font-size: 15px; border-radius: 10px;">
+                                                    </div>
+
+
+
+
+
+                                                    <button type="submit" class="btn btn-primary" style="width: 150px; height: 50px; margin: 20px; font-size: 15px; color: white; font-weight: 500; background-color: #e8604c; border-radius:12PX;">Submit</button>
+
+                                                </form>
+
+                                                }
+                                            }
+                                        }
+
+
+
+                                            </div>
+
+                                <div class="social-media">
+                                    <span>Follow me in:</span>
+                                    <a href="" class="media-link"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="https://twitter.com/" class="media-link"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="https://www.linkedin.com/in//" class="media-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com//" class="media-link"><i class="fab fa-instagram-square"></i></a>
+                                    <a href="https://github.com/" class="media-link"><i class="fab fa-github-square"></i></a>
+                                </div>
+
+                                <div class="last-post" style="height:670px;">
+                                    <div class="post-cover" style=" background-image: url('/Content/assets/img/join-island.jpg') ; height:650px;">
+                                        <span class="last-badge">Featured</span>
+                                    </div>
+                                    @*<h3 class="post-title">3D layer</h3>
+                                <button class="post-CTA">View</button>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+</body>
+</html>
+
+

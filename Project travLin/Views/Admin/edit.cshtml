@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewBag.Title = "edit";
+    //Layout = "~/Views/Shared/_AdminPageLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+
+        #overlay {
+            height: 100vh;
+            width: 100%;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            
+            position: fixed;
+        }
+
+
+        .for button {
+            background-color: black;
+            color: white;
+            font-weight: 800px;
+            height: 50px;
+        }
+
+
+
+        .for table {
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px black;
+            /* border: 1px solid red; */
+            border-radius: 30px;
+            padding: 50px;
+            margin-left: 20%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        .for h1 {
+            /* background: rgb(246, 248, 244); */
+            /* border-color: red; */
+            color: white;
+            border-radius: 20px;
+            margin-left: 40%;
+            padding: 20px;
+            width: 350px;
+            font-size: 60px;
+        }
+
+        .for .col {
+            height: 30px;
+            width: 280px;
+            padding: 30px;
+            font-size: 30px;
+        }
+
+        .for input {
+            padding: 10px;
+            height: 40px;
+            width: 500px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 800px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/CSS/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="overlay" style="overflow: auto;">
+
+        <section class="for">
+            <form action="" method="post" enctype="multipart/form-data">
+
+
+
+
+
+
+
+
+                <h1 style=" width: 100%; margin-top: 20px;">Edit Users   &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      <a href="/admin/AddUser/"  style="text-decoration:none; color:white;"> <i class="fa-solid fa-xmark"></i> </a> </h1>
+
+
+
+
+                <table style="margin-left: 350px; margin-top: 50px;">
+
+                    @{
+                        if (ViewBag.val != null)
+                        {
+
+
+                            foreach (var user in ViewBag.val.Rows)
+                            {
+
+
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        <b> Name :</b>
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+
+                                        <input type="text" style="color: black;" placeholder="Enter name " name="name" value="@user[1]">
+
+                                    </td>
+                                </tr>
+
+
+
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        <b>Mail Id:</b>
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+
+                                        <input type="email" style="color: black;" placeholder="enter mail id" name="mail" value="@user[2]">
+
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        Moblile No.(optional):
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+
+                                        <input type="text" style="color: black;" placeholder="Mobile Number" name="mob" value="@user[3]">
+
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        User Code:
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+
+                                        <input type="text" style="color:black; background: rgba(0, 0, 0, 0.2);" placeholder="" name="uc" readonly value="@user[0]">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        City:
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+                                        <input type="text" style="color: black;" placeholder="Enter name of City" name="city" value="@user[4]">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        State:
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+                                        <input type="text" style="color: black;" placeholder="Enter name of state" name="state" value="@user[5]">
+
+                                    </td>
+                                </tr>
+
+
+
+                                <tr class="ro1">
+                                    <td class="col" style="width: 350px;">
+
+                                        Password:
+
+                                    </td>
+
+                                    <td class="co2">
+
+
+
+                                        <input type="password" style="color: black;" placeholder="Password" name="pass" value="@user[6]">
+
+                                    </td>
+                                </tr>
+
+
+
+
+
+                            }
+                        }
+                    }
+
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+
+                        <td class="col2" colspan="2" style=" text-align: center;">
+
+                            <input type="submit" style=" background-color: rgb(247, 152, 152);">
+
+                        </td>
+
+
+
+                    </tr>
+
+
+                </table>
+
+            </form>
+
+        </section>
+
+
+    </div>
+
+
+    </body>
+</html>

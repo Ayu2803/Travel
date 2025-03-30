@@ -1,0 +1,232 @@
+﻿
+@{
+    ViewBag.Title = "cat";
+    Layout = "~/Views/Shared/_Layoutuser.cshtml";
+}
+
+
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+</head>
+
+<body style=" background-color: black;">
+
+
+
+    <section class="join section" id="search">
+
+        <div class="join__container container grid">
+
+
+            <div class="join__data">
+
+
+
+                <form action="/Home/searchhome" method="post" class="join__form" style="width:fit-content; display:flex;">
+
+                    <input type="text" style="width:700px;" name="search" placeholder="Search Your Desired Place" class="join__input" autocomplete="on">
+
+
+
+
+
+                    <input type="submit" value="Search Place" class="join__button button" />
+
+                    @*<i class="ri-arrow-right-line"></i>
+                        <button type="submit" class="join__button button">
+                            Search Place <i class="ri-arrow-right-line"></i>
+                        </button>*@
+
+
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    @*<div class="row" style="margin-top:200px;">
+            <div class="col-sm-10">
+
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        @using (Html.BeginForm("searchhome", "Home", FormMethod.Post))
+                        {
+
+
+
+
+                            <form class="" role="search" style="display:;">
+                                <input type="search" name="search" placeholder="Search" aria-label="Search" style="width:700px; height:37px; border-radius:50px; text-align:center;margin-left:350px;">
+                                <button class="btn btn-outline-warning" style="border-radius:50px; background-color: yellow; color: black; float: right;" type="submit">Search</button>
+                            </form>
+
+
+                        }
+
+
+                    </div>
+                </nav>
+
+            </div>
+
+        </div>*@
+
+
+
+    @*<div class="row mt-5" style="margin-bottom:50px;">
+            <div class="col-sm-3" style="margin-left:150px; width:100%;">
+
+                @{
+                    if (ViewBag.Data != null)
+                    {
+
+
+                        foreach (var pla in ViewBag.Data.Rows)
+                        {
+
+
+
+                            <a href="/Home/content?p_id=@pla[0]" style="text-decoration:none;">
+
+
+
+
+                                <div class="card" style="width:360px;">
+
+                                    <img src="~/Content/landscape/@pla[20]" class="card-img-top" style="height:250px;">
+
+                                    <div class="card-body" style="text-align:center;">
+
+                                        <p class="card-text">
+
+                                            <div>
+                                                <h3 style="color:black;">@pla[1]</h3>
+
+                                            </div>
+
+
+                                            <div class="">
+
+
+                                                <div class="pt-1"><i class="fa fa-calendar text-warning me-2">  </i>   @pla[33] </div>
+
+
+                                            </div>
+
+
+                                            <div class="pt-1">@pla[3]</div>
+
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+
+
+
+                        }
+                    }
+
+                    else
+                    {
+                        <h1>No Result Found</h1>
+                    }
+
+                }
+
+
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+    <section class="popular section" id="popular" style="margin-bottom:50px; margin-top:-8%;">
+
+
+        <h2 class="section__title">
+            Plan Your Tour<br>
+
+        </h2>
+
+
+
+
+
+
+
+        <div class="popular__container container grid">
+
+
+
+
+
+
+
+            @{
+
+                if (ViewBag.user != null)
+                {
+
+
+                    foreach (var pla in ViewBag.user.Rows)
+                    {
+
+
+                        <a href="/Home/content?p_id=@pla[0]" style="text-decoration: none; color: hsl(0, 0%, 60%);">
+                            <article class="popular__card" style="border:solid white 5px; padding:10px; height:400px;">
+
+                                <div class="popular__image">
+                                    <img src="~/Content/landscape/@pla[20]" alt="popular image" class="popular__img" style="height:180px; width:400px;">
+
+                                    <div class="popular__shadow"></div>
+                                </div>
+
+
+
+
+                                <h2 class="popular__title">
+                                    @pla[1]
+                                </h2>
+
+
+
+                                <div class="popular__location">
+                                    @*<i class="ri-map-pin-line"></i>*@
+
+
+                                    <span>@pla[3]</span>
+
+
+                                </div>
+                            </article>
+                        </a>
+
+                    }
+                }
+            }
+
+
+        </div>
+    </section>
+
+
+</body>
+
+
+

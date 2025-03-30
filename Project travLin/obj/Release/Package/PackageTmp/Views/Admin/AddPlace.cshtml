@@ -1,0 +1,1111 @@
+﻿
+@{
+    ViewBag.Title = "AddPlace";
+    Layout = "~/Views/Shared/_AdminPageLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+
+        #overlay {
+            height: 100vh;
+            width: 100%;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            visibility: hidden;
+            position: fixed;
+        }
+
+
+        .for button {
+            background-color: black;
+            color: white;
+            font-weight: 800px;
+            height: 50px;
+        }
+
+
+
+        .for table {
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px black;
+            /* border: 1px solid red; */
+            border-radius: 30px;
+            padding: 50px;
+            margin-left: 20%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        .for h1 {
+            /* background: rgb(246, 248, 244); */
+            /* border-color: red; */
+            color: white;
+            border-radius: 20px;
+            margin-left: 40%;
+            padding: 20px;
+            width: 350px;
+            font-size: 60px;
+        }
+
+        .for .col {
+            height: 30px;
+            width: 280px;
+            padding: 30px;
+            font-size: 30px;
+        }
+
+        .for input {
+            padding: 10px;
+            height: 40px;
+            width: 500px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 800px;
+        }
+        .for select {
+            padding: 10px;
+            height: 40px;
+            width: 500px;
+            border-radius: 20px;
+
+            font-weight: 800px;
+        }
+       
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/CSS/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+  
+    <!-- -------------main body----------------------------- -->
+    
+
+
+
+        <!-- ----------------------------------div total user place coment etc------------------------- -->
+        <h3 class="i-name">
+            States
+        </h3>
+
+        <div class="value">
+
+            <div class="val-box">
+
+
+
+
+
+                <button onclick="show()" class="val-box" style="transition: all 3s; text-align: center ; justify-content: center; font-weight: 800; font-size: 20px; background-color: #336ce8; color: white; box-shadow: 10px 10px 10px black;">
+
+                    Add Places
+
+                </button>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- ----------------------------------End div total user place coment etc------------------------- -->
+        <!-- ----------------------------------User Div------------------------- -->
+
+        <dir class="board">
+
+            <table style="width:100%;">
+
+                <thead>
+
+                    <tr>
+                        <td>
+                            Name of place
+                        </td>
+
+                        <td>
+                            Image
+                        </td>
+
+                        <td>
+                            Short Descripition
+                        </td>
+
+
+                        <td>
+                            Place_ID
+                        </td>
+
+                        <td>
+                            <!-- null -->
+                        </td>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+
+                    @{
+
+                        if (ViewBag.place != null)
+                        {
+
+
+                            foreach (var cat in ViewBag.place.Rows)
+                            {
+
+
+                                <tr>
+
+                                    <td class="people">
+                               
+                                <div class="people-de">
+
+                                    <h5 style="margin-top:20px;">
+                                        @cat[1]
+                                    </h5>
+
+
+                                </div>
+
+                                    </td>
+
+
+                                    <td class="people-des">
+                                        <h5>
+                                            <img src="~/Content/landscape/@cat[20]" style="border-radius:10px; height:70px; width:120px;" />
+                                        </h5>
+
+                                    </td>
+
+                                    <td class="active" >
+                                        <p style="word-spacing:5px; width:350px; background-color:white;">
+
+                                         @cat[2]
+
+                                        </p>
+
+                                    </td>
+
+
+                                    <td class="role">
+
+                                        <p>
+                                            1d445
+                                        </p>
+
+                                    </td>
+
+                                    <td class="edit">
+                                     <a href="#" onclick="show()">delete</a>
+
+                                    </td>
+
+
+                                </tr>
+
+
+
+
+
+
+                                }
+                            } }
+
+
+                              
+
+
+
+
+
+
+
+
+                            </tbody>
+
+            </table>
+
+
+        </dir>
+
+
+    </section>
+
+
+
+
+    <div id="overlay" style="overflow: auto;" >
+
+        <section class="for">
+
+            <form method="post" enctype="multipart/form-data">
+
+                <!-- --------------------heading-------------------- -->
+
+                <h1 style=" width: 100%; margin-top: 20px;">Add Place   &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        <i class="fa-solid fa-xmark" onclick="hide()"></i>  </h1>
+
+
+
+
+                <table style="margin-left: 350px; margin-top: 50px;">
+
+
+
+
+
+                    <!-- --------------------------------name of place ------------------------------- -->
+
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            <b> Name Of of place:</b>
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="Enter name of state" name="name">
+
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            <b> State:</b>
+
+                        </td>
+
+                        <td class="co2">
+
+
+                            <select name="state">
+
+                                <option>select</option>
+
+                                @{
+
+                                    if (ViewBag.Data != null)
+                                    {
+
+
+                                        foreach (var pla in ViewBag.Data.Rows)
+                                        {
+                                            <option>@pla[1]</option>
+                                        }
+                                    }
+                                    }
+
+                                        </select>
+
+                            
+
+                        </td>
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            <b> categorie:</b>
+
+                        </td>
+
+                        </td>
+
+                        <td class="co2">
+
+
+                            <select name="cat">
+                                <option>select</option>
+
+
+                                @{
+
+                                    if (ViewBag.cat != null)
+                                    {
+
+
+                                        foreach (var cat in ViewBag.cat.Rows)
+                                        {
+
+
+
+                                            <option>@cat[1]</option>
+
+
+                                            }
+                                        }
+                                    }
+
+
+                                        </select>
+
+
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -------------------------phrase--------------------------------------------------->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            <b>    enter a phrase:</b>
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="Optional" name="phrase"></textarea>
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- ---------------------------para1 bold-------------------------- -->
+
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            Write para 1(bold):</p>
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="p1_b"></textarea>
+
+                        </td>
+                    </tr>
+
+
+
+
+                    <!-- ------------------------------------para1 ligth----------------------------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            write para 1(light)
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="p1_l"></textarea>
+
+                        </td>
+                    </tr>
+
+
+                    <!-- ----------------------------------------Toure plan para----------------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan para:
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="Enter name of state" name="tp"></textarea>
+
+                        </td>
+                    </tr>
+
+
+                    <!-- --------------------------------------TP 1------------------------------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 1 (heading):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp1_h">
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -----------------TP para 1----------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 1 (para):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="tp1_p"></textarea>
+
+                        </td>
+                    </tr>
+
+
+
+
+
+                    <!-- --------------------------------------TP 2------------------------------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 2 (heading):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp2_h">
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -----------------TP para 2----------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 2 (para):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="tp2_p"></textarea>
+
+                        </td>
+                    </tr>
+
+
+                    <!-- -------------------TP 2 Points------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 2 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp2_p1">
+
+                        </td>
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 2 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp2_p2">
+
+                        </td>
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 2 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp2_p3">
+
+                        </td>
+                    </tr>
+
+
+
+
+
+
+                    <!-- --------------------------------------TP 3------------------------------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 3 (heading):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp3_h">
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -----------------TP para 3----------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 3 (para):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="tp3_p"></textarea>
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -------------------TP 3 Points------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 3 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp3_p1">
+
+                        </td>
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 3 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp3_p2">
+
+                        </td>
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 3 (points):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp3_p3">
+
+                        </td>
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <!-- --------------------------------------TP 4------------------------------------------ -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 4 (heading):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="" name="tp4_h">
+
+                        </td>
+                    </tr>
+
+
+
+                    <!-- -----------------TP para 4----------------- -->
+
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            tour plan 4 (para):
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <textarea style="color: black;" placeholder="" name="tp4_p"></textarea>
+
+                        </td>
+                    </tr>
+
+
+
+
+
+
+
+                    <!-- -----------------------------------image files--------------------------------- -->
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="landscape" style="font-size: 20px;">
+                            <span style="margin-left: -350px;"> Choose main file(landscape) </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+                    @*-------------------------------------some photos---------------------------------*@
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <span style="margin-left: -200px;"><b>  Choose images for some pohtos  section </b>  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+
+                            <input type="file" name="sp_1" style="font-size: 20px;"><span style="margin-left: -350px;"> Choose images for some pohtos  section </span>
+
+                        </td>
+
+
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="sp_2" style="font-size: 20px;"><span style="margin-left: -350px;"> Choose images for some pohtos  section </span>
+
+                        </td>
+
+
+                    </tr>
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="sp_3" style="font-size: 20px;"><span style="margin-left: -350px;"> Choose images for some pohtos  section </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+                    @*--------------------------------------galery photos-----------------------------------------*@
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <span style="margin-left: -350px;"><b> Choose Images for Gallery</b>  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g1" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g2" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g3" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g4" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g5" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g5" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g6" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g7" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g8" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="g9" style="font-size: 20px;" multiple><span style="margin-left: -350px;"> Choose Images for Gallery  </span>
+
+                        </td>
+
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr class="ro1">
+
+                        <td class="col2" colspan="2" style=" text-align: center;">
+
+                            <input type="submit" style=" background-color: rgb(247, 152, 152);">
+
+                        </td>
+
+
+
+                    </tr>
+
+                </table>
+
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+
+
+</body>
+
+<script>
+
+    let pop = window.document.getElementsByClassName("overlay");
+
+
+            function show(){
+                window.document.getElementById('overlay').style.visibility='visible';
+
+
+
+                window.document.getElementById('overlay').style.zIndex='1';
+
+
+
+
+                // document.querySelector('overlay').classList.add('showovelay');
+
+            }
+
+
+
+                function hide(){
+                    window.document.getElementById('overlay').style.visibility='hidden';
+
+
+
+                    window.document.getElementById('overlay').style.zIndex='-1';
+
+
+
+
+                    // document.querySelector('overlay').classList.add('showovelay');
+
+                }
+
+
+
+
+</script>
+
+</html>
+

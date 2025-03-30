@@ -1,0 +1,286 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminPageLayout.cshtml";
+}
+<html lang="en">
+
+<head>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/CSS/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- -------------main body----------------------------- -->
+    <!-- ----------------------------------div total user place coment etc------------------------- -->
+
+  
+
+
+
+                <h3 class="i-name">
+                    Dashboard
+                </h3>
+
+                <div class="value">
+
+                    <div class="val-box">
+
+                        <i class="fas fa-users"></i>
+                        <div>
+                            @{
+                                if (ViewBag.ac != null)
+                                {
+
+
+                                    foreach (var user in ViewBag.ac.Rows)
+                                    {
+
+
+                                        <h3>
+                                            @user[0]
+                                        </h3>
+                                    }
+                                }
+                                }   
+
+                                        <span>
+                                            Total Users
+                                        </span>
+
+                                    </div>
+
+                    </div>
+
+
+                    <div class="val-box">
+
+                        <i class="fas fa-users"></i>
+                        <div>
+
+                            @{
+                                if (ViewBag.bc != null)
+                                {
+
+
+                                    foreach (var user in ViewBag.bc.Rows)
+                                    {
+
+
+                                        <h3>
+                                            @user[0]
+                                        </h3>
+                                    }
+                                }
+                            }
+
+                            <span>
+                                Total Places
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="val-box">
+
+                        <i class="fas fa-users"></i>
+                        <div>
+
+                            @{
+                                if (ViewBag.cc != null)
+                                {
+
+
+                                    foreach (var user in ViewBag.cc.Rows)
+                                    {
+
+
+                                        <h3>
+                                            @user[0]
+                                        </h3>
+                                    }
+                                }
+                            }
+
+                            <span>
+                                Total states
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="val-box">
+
+                        <i class="fas fa-users"></i>
+                        <div>
+                            @{
+                                if (ViewBag.ac != null)
+                                {
+
+
+                                    foreach (var user in ViewBag.dc.Rows)
+                                    {
+
+
+                                        <h3>
+                                            @user[0]
+                                        </h3>
+                                    }
+                                }
+                            }
+                            <span>
+                                Total categories
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ----------------------------------End div total user place coment etc------------------------- -->
+                <!-- ----------------------------------User Div------------------------- -->
+
+                <dir class="board">
+
+                    <table style="width:100%;">
+
+                        <thead>
+
+                            <tr>
+                                <td>
+                                    Name
+                                </td>
+
+                                <td>
+                                    Mail
+                                </td>
+
+                                <td>
+                                    Status
+                                </td>
+
+
+                                <td>
+                                    CoustomerID
+                                </td>
+
+                                <td>
+                                    <!-- null -->
+                                </td>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @{
+                                if (ViewBag.Data != null)
+                                {
+
+
+                                    foreach (var user in ViewBag.Data.Rows)
+                                    {
+                                        <tr>
+
+                                            <td class="people">
+                                                <img src="~/Content/profile/@user[5]" alt="">
+                                                <div class="people-de">
+
+                                                    <h5>
+                                                        @user[1]
+                                                    </h5>
+                                                    <p>
+                                                        @user[4]
+                                                    </p>
+
+                                                </div>
+
+                                            </td>
+
+
+                                            <td class="people-des">
+
+                                                <h5>
+                                                    @user[2]
+                                                </h5>
+
+                                            </td>
+
+                                            <td class="active">
+                                                <p>
+
+                                                    Active
+
+                                                </p>
+
+                                            </td>
+
+
+                                            <td class="role">
+
+                                                <p>
+                                                    @user[0]
+                                                </p>
+
+                                            </td>
+
+                                            <td class="edit">
+                                                <a href="/admin/edit?sr=@user[0]">
+
+                                                    edit
+
+                                                </a>
+                                            </td>
+
+
+                                        </tr>
+
+
+
+
+
+                                        }
+                                    }
+                                }
+
+
+                                 
+
+
+
+
+
+                                    </tbody>
+
+                    </table>
+
+
+                </dir>
+
+                </section>
+
+
+
+
+            </body>
+
+</html>

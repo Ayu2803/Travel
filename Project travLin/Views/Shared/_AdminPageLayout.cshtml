@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/CSS/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+
+
+    <!-- -----------------------------Side Nav Bar------------------------- -->
+
+    <section id="menu">
+
+        <div class="logo">
+            <img src="~/Content/CSS/images/logo.png" alt="" style="margin-bottom: 40px; height: 50px; width:250px;">
+        </div>
+
+        <div class="items">
+
+
+            <a href="/Admin/index/" style="text-decoration:none;  color:white;"> <li><i class="fa-solid fa-chart-pie"></i> Dashboard</li></a>
+
+            <a href="/Admin/AddUser/" style="text-decoration:none;  color:white;"><li><i class="fa-solid fa-users"></i> Users </li></a>
+
+            <a href="/Admin/AddPlace/" style="text-decoration:none;  color:white;">    <li><i class="fa-solid fa-location-dot"></i> Places </li></a>
+
+            <a href="/Admin/AddState/" style="text-decoration:none;  color:white;"> <li><i class="fa-solid fa-mountain-sun"></i>State </li></a>
+
+            <a href="/Admin/Categories" style="text-decoration:none;  color:white;"><li><i class="fa-solid fa-place-of-worship"></i> Categorey </li></a>
+
+            <a href="/Admin/contact/" style="text-decoration:none;  color:white;"><li><i class="fa-solid fa-users"></i> Queries </li></a>
+
+            @*<li><i class="fa-solid fa-comments"></i> <a href="/Admin/Comment">Comments</a> </li>*@
+
+
+
+
+        </div>
+
+    </section>
+
+    <!-- -------------------------Side bar end---------------------------------- -->
+
+
+
+
+
+    <section id="interface">
+
+        <div class="navigation">
+
+            <div class="n1">
+
+                <div class="search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="search">
+
+                </div>
+
+            </div>
+
+
+            <div class="profile">
+                <i class="far fa-bell"></i>
+                <img src="~/Content/CSS/images/j.jpeg" alt="">
+            </div>
+        </div>
+
+        <!-- ----------------------------------------end of nav bar-------------------------------- -->
+
+
+        @RenderBody()
+        </div>
+</body>
+</html>

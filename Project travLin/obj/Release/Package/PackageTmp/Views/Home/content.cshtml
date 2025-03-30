@@ -1,0 +1,827 @@
+﻿
+@{
+    ViewBag.Title = "content";
+    Layout = "~/Views/Shared/_generalPage1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- important meta tags -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome, 00 - Travel &amp; ">
+    <!-- page title -->
+    <title>Pallavi Tour & Travels &amp; Tourism HTML/Tailwind CSS Template</title>
+    <!-- additional css files -->
+    <link rel="stylesheet" href="~/Content/travel_pa_files/jarallax.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/animate.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/daterangepicker.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/fancybox.min.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/leaflet.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/select2.min.css">
+    <link rel="stylesheet" href="~/Content/travel_pa_files/swiper-bundle.min.css">
+    <!-- custom css files -->
+    <link rel="stylesheet" href="~/Content/travel_pa_files/styles.css">
+</head>
+
+<body>
+
+    <!--========== PRELOADER STYLE START ==========-->
+    <div class="flex items-center justify-center fixed w-full h-full z-50 bg-white preloader" style="display: none;">
+        <div class="relative">
+            <div class="h-30 w-30 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+            <img src="~/Content/travel_pa_files/logo-icon.png" alt="logo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[50px]">
+            <div class="absolute top-0 left-0 h-30 w-30 rounded-full border-t-8 border-b-8 border-primary-1 animate-spin">
+            </div>
+        </div>
+    </div>
+    <!--========== PRELOADER STYLE END ==========-->
+    <!--========== HEADER STYLE ONE START ==========-->
+    <!--========== HEADER STYLE ONE END ==========-->
+    <!--========== BREADCRUMB STYLE START ==========-->
+
+  
+
+                <div class="paralax-container lg:py-40 py-20 relative overflow-hidden">
+                    <div class="jarallax absolute inset-0 z-minus before:content-[&#39;&#39;] before:absolute before:inset-0 before:bg-[#030610] before:bg-opacity-50 before:z-minus" data-jarallax="">
+
+
+
+                        @{
+
+                            if (ViewBag.Data != null)
+                            {
+
+
+                                foreach (var pla in ViewBag.Data.Rows)
+                                {
+
+                                    <div id="jarallax-container-0" class="jarallax-container" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
+
+
+
+
+
+
+
+                                        <img class="jarallax-img" src="~/Content/landscape/@pla[20]" alt="placeholder" style="object-fit: cover; object-position: 50% 50%; max-width: none; position: fixed; top: 0px; left: 0px; width: 1835px; height: 771px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; margin-top: 86.5px; transform: translate3d(0px, -26.5px, 0px);">
+
+
+
+                                    </div>
+                                }
+                            }
+                            }
+                                </div>
+
+
+                    <img src="~/Content/travel_pa_files/breadcrunb__shape.png" alt="placeholder" class="absolute bottom-0 left-0 z-1 lg:w-[12.5%] w-[20%]">
+
+
+                    <img src="~/Content/./travel_pa_files/bird-illustration-w.png" alt="placeholder" class="absolute top-[10%] right-[4%] z-1 w-[7.5%]">
+
+                    <div class="container relative z-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="./main-file/dist/index.html">Home</a></li>
+
+                            </ol>
+                        </nav>
+                        <h2 class="xl:text-[60px] mt-2 lg:text-4xl md:text-2xl text-[30px] text-white leading-[1.3] font-medium max-w-[640px]">Welcome to the World of Travel &amp; Tourism </h2>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-t to-[#FFF1EC] from-white relative z-1">
+                    <div class="absolute top-1/2 -translate-y-1/2 right-0 max-w-[14%] z-minus lg:inline-block hidden">
+
+
+
+
+
+                        <img src="~/Content/travel_pa_files/tree-illustration.png" alt="leaf">
+
+
+
+
+                    </div>
+                    <div class="absolute top-[5%] left-[1%] max-w-[9%] z-minus lg:inline-block hidden">
+                        <img src="~/Content/travel_pa_files/bird-illustration.png" alt="leaf">
+                    </div>
+                    <div class="container">
+                        <div class="grid grid-cols-12 gap-base">
+                            <div class="lg:col-span-8 col-span-12">
+                                <ul class="bg-white lg:px-base px-5 lg:py-6 py-5 flex lg:overflow-hidden overflow-x-scroll lg:mt-[-40px] mt-base border">
+                                    <li class="grow py-1 border-r border-primary-1 last:border-none px-5">
+                                        <a href="./main-file/dist/package-details-3.html#Information" class="flex items-center text-dark-2 justify-center duration-200 hover:text-primary-1 font-medium">
+                                            <div class="shrink-0 mr-2">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.16675 1.66675H7.50008C3.33341 1.66675 1.66675 3.33341 1.66675 7.50008V12.5001C1.66675 16.6667 3.33341 18.3334 7.50008 18.3334H12.5001C16.6667 18.3334 18.3334 16.6667 18.3334 12.5001V10.8334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M13.3666 2.51663L6.7999 9.0833C6.5499 9.3333 6.2999 9.82497 6.2499 10.1833L5.89157 12.6916C5.75823 13.6 6.3999 14.2333 7.30823 14.1083L9.81657 13.75C10.1666 13.7 10.6582 13.45 10.9166 13.2L17.4832 6.6333C18.6166 5.49997 19.1499 4.1833 17.4832 2.51663C15.8166 0.849966 14.4999 1.3833 13.3666 2.51663Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M12.425 3.45825C12.9834 5.44992 14.5417 7.00825 16.5417 7.57492" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="whitespace-nowrap">Information</span>
+                                        </a>
+                                    </li>
+                                    <li class="grow py-1 border-r border-primary-1 last:border-none px-5">
+                                        <a href="./main-file/dist/package-details-3.html#plan" class="flex items-center text-dark-2 justify-center duration-200 hover:text-primary-1 font-medium">
+                                            <div class="shrink-0 mr-2">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6.66675 1.66675V4.16675" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M13.3333 1.66675V4.16675" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M5.83325 10.8333H12.4999" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M5.83325 14.1667H9.99992" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M13.3333 2.91675C16.1083 3.06675 17.5 4.12508 17.5 8.04175V13.1917C17.5 16.6251 16.6667 18.3417 12.5 18.3417H7.5C3.33333 18.3417 2.5 16.6251 2.5 13.1917V8.04175C2.5 4.12508 3.89167 3.07508 6.66667 2.91675H13.3333Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+
+                                            <span class="whitespace-nowrap"> Tour Plan</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="grow py-1 border-r border-primary-1 last:border-none px-5">
+                                        <a href="./main-file/dist/package-details-3.html#location" class="flex items-center text-dark-2 justify-center duration-200 hover:text-primary-1 font-medium">
+                                            <div class="shrink-0 mr-2">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.01675 7.07508C4.65842 -0.141583 15.3501 -0.13325 16.9834 7.08342C17.9417 11.3167 15.3084 14.9001 13.0001 17.1168C11.3251 18.7334 8.67508 18.7334 6.99175 17.1168C4.69175 14.9001 2.05842 11.3084 3.01675 7.07508Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    <path d="M7.70825 9.58333L8.95825 10.8333L12.2916 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="whitespace-nowrap">Location</span>
+                                        </a>
+                                    </li>
+                                    <li class="grow py-1 border-r border-primary-1 last:border-none px-5">
+                                        <a href="./main-file/dist/package-details-3.html#gallary" class="flex items-center text-dark-2 justify-center duration-200 hover:text-primary-1 font-medium ">
+                                            <div class="shrink-0 mr-2">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7.50008 18.3334H12.5001C16.6667 18.3334 18.3334 16.6667 18.3334 12.5001V7.50008C18.3334 3.33341 16.6667 1.66675 12.5001 1.66675H7.50008C3.33341 1.66675 1.66675 3.33341 1.66675 7.50008V12.5001C1.66675 16.6667 3.33341 18.3334 7.50008 18.3334Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M7.49992 8.33333C8.42039 8.33333 9.16659 7.58714 9.16659 6.66667C9.16659 5.74619 8.42039 5 7.49992 5C6.57944 5 5.83325 5.74619 5.83325 6.66667C5.83325 7.58714 6.57944 8.33333 7.49992 8.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M2.2251 15.7916L6.33343 13.0332C6.99176 12.5916 7.94176 12.6416 8.53343 13.1499L8.80843 13.3916C9.45843 13.9499 10.5084 13.9499 11.1584 13.3916L14.6251 10.4166C15.2751 9.85822 16.3251 9.85822 16.9751 10.4166L18.3334 11.5832" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+
+                                            <span class="whitespace-nowrap">Gallary</span>
+                                        </a>
+                                    </li>
+                                    <li class="grow py-1 border-r border-primary-1 last:border-none px-5">
+                                        <a href="./main-file/dist/package-details-3.html#review" class="flex items-center text-dark-2 justify-center duration-200 hover:text-primary-1 font-medium ">
+                                            <div class="shrink-0 mr-2">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.4082 3.45008L14.3499 6.60839C14.3415 7.04172 14.6166 7.61674 14.9666 7.87507L17.0332 9.44172C18.3582 10.4417 18.1416 11.6667 16.5582 12.1667L13.8666 13.0084C13.4166 13.1501 12.9416 13.6417 12.8249 14.1001L12.1832 16.5501C11.6749 18.4834 10.4082 18.6751 9.35821 16.9751L7.89154 14.6001C7.62487 14.1667 6.99154 13.8417 6.49154 13.8667L3.70824 14.0084C1.71657 14.1084 1.1499 12.9584 2.4499 11.4417L4.09988 9.52506C4.40821 9.16672 4.54988 8.50007 4.40821 8.05007L3.56659 5.35839C3.07492 3.77506 3.95824 2.90007 5.53324 3.41674L7.99158 4.22507C8.40825 4.3584 9.03324 4.26673 9.38324 4.0084L11.9499 2.15839C13.3333 1.15839 14.4415 1.74174 14.4082 3.45008Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M18.2584 18.3333L15.7334 15.8083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="whitespace-nowrap">Review</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="pack__disc" id="Information">
+                                    <div class="flex justify-between items-center gap-2 flex-wrap lg:pt-12 pt-8 lg:pb-4">
+
+
+
+
+
+
+
+                                        @*----------------------------------about the place-------------------------*@
+                                        @{
+
+                                            if (ViewBag.Data != null)
+                                            {
+
+
+                                                foreach (var pla in ViewBag.Data.Rows)
+                                                {
+
+
+
+
+                                                    <h2 class="font-sans lg:text-[45px] md:text-xl text-lg font-semibold !pointer-events-none !mt-0 !mb-0">About <span class="lg:text-lg text-md font-normal">The @pla[1]</span> </h2>
+
+
+                                                }
+                                            }
+                                        }
+
+
+
+
+                                        <div class="flex items-center">
+
+                                        </div>
+                                    </div>
+
+
+                                    @*----------------------------------about para bold---------------------------------*@
+
+
+                                    @{
+
+                                        if (ViewBag.Data != null)
+                                        {
+
+
+                                            foreach (var pla in ViewBag.Data.Rows)
+                                            {
+
+
+
+
+
+
+                                                <h5 class="lg:text-2md text-md text-dark-2 font-medium leading-[1.5] font-sans mb-6">
+                                                    @pla[2]
+                                                </h5>
+
+
+
+                                                @*----------------------------------about para ---------------------------------*@
+
+
+                                                <p>
+                                                    @pla[3]
+                                                </p>
+
+                                            }
+                                        }
+                                    }
+
+
+
+                                    @{
+
+                                        if (ViewBag.Data != null)
+                                        {
+
+
+                                            foreach (var pla in ViewBag.Data.Rows)
+                                            {
+
+
+
+
+                                                <div class="lg:pt-10 pt-8">
+
+
+
+
+                                                    <h3>Some Photo</h3>
+
+
+                                                    <p>
+                                                        @pla[4]
+                                                    </p>
+
+
+                                                    @*----------------------------------Some photos---------------------------------*@
+
+                                                    <div class="grid grid-cols-3 gap-5 mt-2">
+
+
+                                                        <div class="col-span-1">
+                                                            <a href="~/Content/travel_pa_files/g1.webp" data-fancybox="details">
+                                                                <img src="~/Content/some/@pla[21]" alt="details" class="w-full">
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+
+                                                        <div class="col-span-1">
+                                                            <a href="~/Content/travel_pa_files/g2.webp" data-fancybox="details">
+                                                                <img src="~/Content/some/@pla[22]" alt="details" class="w-full">
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+                                                        <div class="col-span-1">
+                                                            <a href="~/Content/travel_pa_files/g3.webp" data-fancybox="details">
+                                                                <img src="~/Content/some/@pla[23]" alt="details" class="w-full">
+                                                            </a>
+                                                        </div>
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+
+
+
+                                    @{
+
+                                        if (ViewBag.Data != null)
+                                        {
+
+
+                                            foreach (var pla in ViewBag.Data.Rows)
+                                            {
+
+
+
+                                                <div class="lg:pt-10 pt-8" id="plan">
+
+
+
+
+
+                                                    <h3>Tour Plan</h3>
+
+
+                                                    @*----------------------------------Toure plan Para---------------------------------*@
+
+
+                                                    <p>
+                                                        @pla[5]
+                                                    </p>
+
+
+
+                                                    <div>
+                                                        <div class="flex single__count">
+                                                            <div class="shrink-0 day__count">
+                                                                <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">
+                                                                    01
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            @*----------------------------------Heading 1---------------------------------*@
+
+
+                                                            <div class="lg:ml-[18px] ml-4 pb-8">
+                                                                <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">
+                                                                    Day 01 : @pla[6]
+                                                                </h5>
+
+                                                                @*----------------------------------Tour 1 para---------------------------------*@
+
+                                                                <p>
+                                                                    @pla[7]
+                                                                </p>
+
+
+
+                                                            </div>
+
+
+
+
+
+                                                            @*----------------------------------toure 2---------------------------------*@
+
+                                                        </div>
+                                                        <div class="flex single__count">
+                                                            <div class="shrink-0 day__count">
+                                                                <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">
+                                                                    02
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="lg:ml-[18px] ml-4 pb-8">
+                                                                <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">
+                                                                    Day 02: @pla[8]
+                                                                </h5>
+
+                                                                @*----------------------------------T2 Para---------------------------------*@
+                                                                <p>
+                                                                    @pla[9]
+                                                                </p>
+
+
+                                                                @*----------------------------------T2 list---------------------------------*@
+                                                                <ul>
+                                                                    <li><i class="bi bi-check-circle"></i> @pla[10]</li>
+                                                                    <li>
+                                                                        <i class="bi bi-check-circle"></i>@pla[11]
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="bi bi-check-circle"></i>@pla[12]
+
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+
+
+
+
+                                                        </div>
+
+
+
+
+
+
+                                                        @*----------------------------------Toure 3---------------------------------*@
+
+
+
+                                                        <div class="flex single__count">
+                                                            <div class="shrink-0 day__count">
+                                                                <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">
+                                                                    03
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+
+                                                            <div class="lg:ml-[18px] ml-4 pb-8">
+                                                                <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">
+                                                                    Day 03: @pla[13]
+                                                                </h5>
+
+
+                                                                @*----------------------------------T3 para---------------------------------*@
+
+                                                                <p>
+                                                                    @pla[14]
+                                                                </p>
+
+
+                                                                @*----------------------------------T3 list---------------------------------*@
+
+
+                                                                <ul class="list-sm">
+                                                                    <li><i class="bi-check2"></i> @pla[15]</li>
+                                                                    <li><i class="bi-check2"></i> @pla[16]</li>
+                                                                    <li><i class="bi-check2"></i> @pla[17]</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        @*----------------------------------Toure 4---------------------------------*@
+
+
+                                                        <div class="flex single__count ">
+                                                            <div class="shrink-0 day__count">
+                                                                <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">
+                                                                    04
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+                                                            <div class="lg:ml-[18px] ml-4 pb-8">
+                                                                <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">
+                                                                    Day 04: @pla[18]
+                                                                </h5>
+                                                                <p>
+                                                                    @pla[19]
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+                                        }
+                                    }
+
+                                    @*----------------------------------Galery---------------------------------*@
+
+
+
+                                    @{
+
+                                        if (ViewBag.Data != null)
+                                        {
+
+
+                                            foreach (var pla in ViewBag.Data.Rows)
+                                            {
+
+
+                                                <div class="lg:pt-10 pt-8" id="gallary">
+                                                    <h3>Gallery</h3>
+                                                    <p>
+                                                        Duis id interdum ex, eu accumsan massa. Fusce vel nibh diam. Nulla ultrices ex at erat
+                                                        pharetra, vitae viverra mauris condimentum. Sed ullamcorper dignissim enim, vel egestas
+                                                        lacus tincidunt ac. Duis id interdum ex, eu accumsan massa. Fusce vel nibh diam.
+                                                    </p>
+                                                    <div class="masonry-container">
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[24]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+                                                            <a href="~/Content/travel_pa_files/g1(1).webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[25]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g2(1).webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[26]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g3(1).webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[27]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g4.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[28]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g5.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+                                                            <img src="~/Content/gallery/@pla[29]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g6.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+                                                            <img src="~/Content/gallery/@pla[30]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g7.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+                                                            <img src="~/Content/gallery/@pla[31]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g8.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+
+
+
+                                                        <div class="masonry-item relative group overflow-hidden">
+
+
+
+
+                                                            <img src="~/Content/gallery/@pla[32]" alt="details" class="object-cover duration-200 group-hover:scale-[103%]">
+
+
+
+
+
+                                                            <a href="~/Content/travel_pa_files/g9.webp" data-fancybox="details" class="inset-0 absolute bg-dark-1 bg-opacity-30 opacity-0 top-0 left-0 flex duration-200 hover:opacity-100 justify-center items-center">
+                                                                <div class="lg:h-10 lg:w-10 w-9 h-9 bg-primary-1 text-white rounded-full inline-flex justify-center items-center text-2md">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+
+
+                                                    </div>
+                                                </div>
+
+                                            }
+                                        }
+                                    }
+
+                                    @*<form action="./main-file/dist/package-details-3.html#" class="lg:pt-10 pt-8">
+                                        <h3 class="lg:text-2xl md:text-xl text-lg text-dark-1 leading-[1.42] font-medium mt-[10px] !mb-base">
+                                            Post A Comments
+                                        </h3>
+                                        <div class="grid grid-cols-2 gap-base">
+                                            <div class="lg:col-span-1 col-span-2">
+                                                <input type="text" placeholder="Your Name" class="input_style__primary" style="border: 1px solid #d3cfcf ">
+                                            </div>
+                                            <div class="lg:col-span-1 col-span-2">
+                                                <input type="text" placeholder="Your Phone Number" class="input_style__primary" style="border: 1px solid #d3cfcf">
+                                            </div>
+                                            <div class="col-span-2">
+                                                <input type="email" placeholder="Your Subject" class="input_style__primary" style="border: 1px solid #d3cfcf">
+                                            </div>
+                                            <div class="col-span-2">
+                                                <textarea cols="30" rows="6" class="input_style__primary" placeholder="Your Subject..."></textarea>
+                                            </div>
+                                            <div class="col-span-2">
+                                                <button type="submit" class="btn_primary__v1">
+                                                    Find Out More
+                                                    <i class="bi bi-chevron-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>*@
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+           
+                <!--========== PACKAGE DETAILS WRAPPER END ==========-->
+                <!--========== INSTAGRAM FEED STYLE START ==========-->
+                <div class="instagram_feed_style__one lg:pt-30 pt-24 ">
+                    <div class="swiper max-w-[1570px] mx-auto px-3 insta-feed-slider swiper-initialized swiper-horizontal swiper-pointer-events">
+                        <div class="swiper-wrapper " id="swiper-wrapper-e2d4e07870e32327" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 5" style="width: 285.2px; margin-right: 30px;">
+
+
+                                <div class="relative overflow-hidden group">
+                                    <img src="~/Content/travel_pa_files/insta-1.jpg" alt="instagram" class="w-full">
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 5" style="width: 285.2px; margin-right: 30px;">
+                                <div class="relative overflow-hidden group">
+                                    <img src="~/Content/travel_pa_files/insta-2.jpg" alt="instagram" class="w-full">
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 285.2px; margin-right: 30px;">
+                                <div class="relative overflow-hidden group">
+                                    <img src="~/Content/travel_pa_files/insta-3.jpg" alt="instagram" class="w-full">
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 285.2px; margin-right: 30px;">
+                                <div class="relative overflow-hidden group">
+                                    <img src="~/Content/travel_pa_files/insta-4.jpg" alt="instagram" class="w-full">
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 285.2px; margin-right: 30px;">
+                                <div class="relative overflow-hidden group">
+                                    <img src="~/Content/travel_pa_files/insta-5.jpg" alt="instagram" class="w-full">
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+                <!--========== INSTAGRAM FEED STYLE END ==========-->
+                <!--========== FOOTER STYLE START ==========-->
+                <!--========== FOOTER STYLE END ==========-->
+                <!-- additional JS file -->
+                <script src="~/Content/travel_pa_files/jquery-3.6.3.min.js"></script>
+                <script src="~/Content/travel_pa_files/swiper-bundle.min.js"></script>
+                <script src="~/Content/travel_pa_files/select2.min.js"></script>
+                <script src="~/Content/travel_pa_files/moment.min.js"></script>
+                <script src="~/Content/travel_pa_files/daterangepicker.min.js"></script>
+                <script src="~/Content/travel_pa_files/fancybox.min.js"></script>
+                <script src="~/Content/travel_pa_files/leaflet.min.js"></script>
+                <script src="~/Content/travel_pa_files/jarallax.min.js"></script>
+                <script src="~/Content/travel_pa_files/wow.min.js"></script>
+                <!-- custom js file -->
+                <script src="~/Content/travel_pa_files/main.js"></script><div class="daterangepicker ltr single opensright"><div class="ranges"></div><div class="drp-calendar left single" style="display: block;"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right" style="display: none;"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div>
+
+
+
+            </body>
+</html>
+

@@ -1,0 +1,318 @@
+﻿
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_AdminPageLayout.cshtml";
+}
+
+
+
+<html lang="en">
+
+<head>
+
+    <style>
+
+        #overlay {
+            height: 100vh;
+            width: 100%;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            visibility: hidden;
+            position: fixed;
+        }
+
+
+        .for button {
+            background-color: black;
+            color: white;
+            font-weight: 800px;
+            height: 50px;
+        }
+
+
+
+        .for table {
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px black;
+            /* border: 1px solid red; */
+            border-radius: 30px;
+            padding: 50px;
+            margin-left: 20%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        .for h1 {
+            /* background: rgb(246, 248, 244); */
+            /* border-color: red; */
+            color: white;
+            border-radius: 20px;
+            margin-left: 40%;
+            padding: 20px;
+            width: 350px;
+            font-size: 60px;
+        }
+
+        .for .col {
+            height: 30px;
+            width: 280px;
+            padding: 30px;
+            font-size: 30px;
+        }
+
+        .for input {
+            padding: 10px;
+            height: 40px;
+            width: 500px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 800px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/CSS/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <!-- ----------------------------------div total user place coment etc------------------------- -->
+        <h3 class="i-name">
+            States
+        </h3>
+
+        <div class="value">
+
+            <div class="val-box" style="width: 300px;">
+
+
+
+
+
+                <button onclick="show()" class="val-box" style="transition: all 3s; text-align: center ; justify-content: center; font-weight: 800; font-size: 20px; background-color: #336ce8; color: white; box-shadow: 10px 10px 10px black;">
+
+                    Add Categorey
+
+                </button>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- ----------------------------------End div total user place coment etc------------------------- -->
+        <!-- ----------------------------------User Div------------------------- -->
+
+        <dir class="board">
+
+            <table style="width:100%;">
+
+                <thead>
+
+                    <tr>
+                        <td>
+                            Name of categorey
+                        </td>
+
+                        <td>
+                            image
+                        </td>
+
+
+
+
+                        <td>
+                            categorey_ID
+                        </td>
+
+                        <td>
+                            <!-- null -->
+                        </td>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    @{
+                        if (ViewBag.Data != null)
+                        {
+
+
+                            foreach (var user in ViewBag.Data.Rows)
+                            {
+                                <tr>
+
+                                    <td class="people">
+                                        <div class="people-de">
+
+                                            <h5 style="margin-top:20px;">
+                                                @user[1]
+                                            </h5>
+
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td class="people-des">
+
+                                        <h5>
+                                            <img src="~/Content/state/@user[2]" style="border-radius:10px; height:70px; width:120px;" />
+                                        </h5>
+
+                                    </td>
+
+                                    <td class="active">
+                                        <p>
+
+                                            @user[0]
+
+                                        </p>
+
+                                    </td>
+
+
+                                </tr>
+
+
+                            }
+                        }
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+
+        </dir>
+
+
+    </section>
+
+
+
+
+    <div id="overlay">
+
+        <section class="for">
+
+            <form action="" method="post" enctype="multipart/form-data">
+
+                <h1 style=" width: 100%; margin-top: 20px;">Add Category   &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        <i class="fa-solid fa-xmark" onclick="hide()"></i>  </h1>
+
+
+                <table style="margin-left: 350px; margin-top: 50px;">
+                    <tr class="ro1">
+                        <td class="col" style="width: 350px;">
+
+                            Name Of Categorey:
+
+                        </td>
+
+                        <td class="co2">
+
+
+
+                            <input type="text" style="color: black;" placeholder="Enter name of state" name="categorie_name">
+
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="ro1">
+                        <td class="col" colspan="2" style="">
+                            <input type="file" name="icon_cat" style="font-size: 20px;"><span style="margin-left: -350px;"> Choose A Image file </span>
+
+                        </td>
+
+
+                    </tr>
+
+                    <tr class="ro1">
+
+                        <td class="col2" colspan="2" style=" text-align: center;">
+
+                            <input type="submit" style=" background-color: rgb(247, 152, 152);">
+
+                        </td>
+
+
+
+                    </tr>
+
+                </table>
+
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+
+
+</body>
+
+<script>
+
+    let pop = window.document.getElementsByClassName("overlay");
+
+
+            function show(){
+                window.document.getElementById('overlay').style.visibility='visible';
+
+
+
+                window.document.getElementById('overlay').style.zIndex='1';
+
+
+
+
+                // document.querySelector('overlay').classList.add('showovelay');
+
+
+            }
+
+
+
+            function hide(){
+                window.document.getElementById('overlay').style.visibility='hidden';
+
+
+
+                window.document.getElementById('overlay').style.zIndex='-1';
+
+
+
+
+                // document.querySelector('overlay').classList.add('showovelay');
+
+            }
+
+
+
+</script>
+
+</html>

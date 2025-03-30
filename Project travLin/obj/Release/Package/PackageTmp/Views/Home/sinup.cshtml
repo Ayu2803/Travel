@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "sinup";
+    Layout = "~/Views/Shared/_generalPage1.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <style>
+
+
+
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+            body * {
+                box-sizing: border-box;
+            }
+
+        .main-login {
+            width: 100vw;
+            height: 100vh;
+            background: #201b2c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-login {
+            width: 50vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+            .left-login > h1 {
+                font-size: 3vw;
+                color: #77ffc0;
+            }
+
+        .left-login-image {
+            width: 35vw;
+        }
+
+        .right-login {
+            width: 50vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-login {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px 35px;
+            background: #2f2841;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px #00000056;
+        }
+
+            .card-login > h1 {
+                color: #0f8;
+                font-weight: 800;
+                margin: 0;
+            }
+
+        .textfield {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 10px 0px;
+        }
+
+            .textfield > input {
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+                padding: 15px;
+                background: #514869;
+                color: #f0ffffde;
+                font-size: 12pt;
+                box-shadow: 0px 10px 40px #00000056;
+                outline: none;
+                box-sizing: border-box;
+            }
+
+            .textfield > label {
+                color: #f0ffffde;
+                margin-bottom: 10px;
+            }
+
+            .textfield > input::placeholder {
+                color: #f0ffff94;
+            }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px 0px;
+            margin: 25px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #2b134b;
+            background: #0f8;
+            cursor: pointer;
+            box-shadow: 0px 10px 40px -12px #00ff8052;
+        }
+
+        .btn-cadastre-se {
+            font-family: 'Noto Sans', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .span-cadastre-se {
+            color: #0f8;
+        }
+    </style>
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/CSS/login.css" rel="stylesheet" />
+    <title>Sinup</title>
+</head>
+
+<body>
+    <div class="main-login"  style=" height:100%;">
+        <div class="left-login">
+            <h1>Create Account <br>And Explore The Places</h1>
+
+
+            <dotlottie-player src="https://lottie.host/4f41e3e1-e650-4a9a-a490-273fab1c4820/oEkc5BSm6L.json" background="transparent" speed="0.5" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
+           
+        <form method="post" enctype="multipart/form-data" >
+
+            <div class="right-login" style="margin-top:50px;">
+                <div class="card-login">
+                    <h1>Create an Account</h1>
+
+                    <div class="textfield">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+
+
+                    <div class="textfield">
+                        <label for="mail">Email</label>
+                        <input type="text" name="mail" placeholder="Email">
+                    </div>
+
+
+                    <div class="textfield">
+                        <label for="mob">Mobil number</label>
+                        <input type="text" name="mob" placeholder="Mobile number">
+                    </div>
+
+
+
+
+                    <div class="textfield">
+                        <label for="pass">password</label>
+                        <input type="password" name="pass" placeholder="password">
+                    </div>
+
+                    <div class="textfield">
+                        <label for="icon">Profile</label>
+                        <input type="file" name="icon">
+                    </div>
+
+
+                    <button class="btn-login" type="submit">Login</button>
+                    <div class="btn-plus">
+                        <a class="btn-cadastre-se" href="/home/login/">Already have Account? <span class="span-cadastre-se">Sin-In</span></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

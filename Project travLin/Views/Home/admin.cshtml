@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoginForm</title>
+    <link rel="stylesheet" href="~/Content/CSS/admin.css" />
+</head>
+
+<body class="flex">
+    <div class="container">
+        <div class="user" style="overflow: hidden;"><img src="~/Content/s.png" alt="" style="height: 95px; width: 95px;"></div>
+        <form method="post">
+            <h1>Admin Log In </h1>
+            <div class="input">
+                <input type="text" required name="user_id" />
+                <label>Username</label>
+            </div>
+            <div class="input box">
+                <input type="password" required name="pass" />
+                <label>Password</label>
+
+            </div>
+            <input class="L_btn" type="submit" value="Login" />
+        </form>
+        <div class="div">
+            <div class="line"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

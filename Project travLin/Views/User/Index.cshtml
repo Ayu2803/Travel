@@ -1,0 +1,875 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layoutuser.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <!-- ---------------------------------------Fav Icon Use hua h yaha ------------------------  -->
+
+
+
+
+
+
+    <link rel="shortcut icon" href="~/Content/assets/img/favicon.png" type="image/x-icon">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+
+
+
+
+
+
+    <!-- ---------------------------------------CSS------------------------  -->
+
+
+
+    <link rel="stylesheet" href="~/Content/assets/css/styles.css">
+
+    <title>TravelIN</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <main class="main">
+
+
+
+
+        <!-- ---------------------------------------Home Page ------------------------  -->
+
+
+
+        <section class="home section" id="home">
+
+
+            <img src="~/Content/assets/img/home-bg.jpg" alt="home image" class="home__bg">
+
+
+            <div class="home__shadow"></div>
+
+
+            <div class="home__container container grid">
+
+
+                <div class="home__data">
+
+
+                    <h3 class="home__subtitle">
+                        Welcome To TravelIN
+                    </h3>
+
+                    <h1 class="home__title">
+                        Explore <br>
+                        India
+                    </h1>
+
+
+
+
+                    <p class="home__description">
+                        Live the trips exploring India, discover
+                        paradises, islands, mountains and much
+                        more, get your trip now.
+                    </p>
+
+
+
+
+
+                    <a href="#search" class="button">
+                        Start Your Journey <i class="ri-arrow-right-line"></i>
+                    </a>
+
+
+
+                </div>
+
+
+
+                <!-- ---------------------------------------Category------------------------  -->
+
+
+
+                <div class="home__cards grid">
+
+
+
+
+                    @{
+
+                        if (ViewBag.cat != null)
+                        {
+
+
+                            foreach (var pla in ViewBag.cat.Rows)
+                            {
+
+
+
+
+                                <a href="/user/cat?name=@pla[1]">
+                                    <article class="home__card" style="height:180px; width:250px;">
+                                        <img src="~/Content/state/@pla[2]" alt="home image" class="home__card-img">
+
+                                        <h3 class="home__card-title">@pla[1]</h3>
+
+
+                                        <div class="home__card-shadow"></div>
+
+                                    </article>
+
+                                </a>
+
+                            }
+                        } }
+
+
+                    @*<article class="home__card">
+
+
+            <img src="~/Content/assets/img/ancient.jpeg" alt="home image" class="home__card-img">
+
+
+            <h3 class="home__card-title">Ancient</h3>
+
+            <div class="home__card-shadow"></div>
+
+        </article>
+
+
+
+
+
+        <article class="home__card">
+
+            <img src="~/Content/assets/img/mordern.jpg" alt="home image" class="home__card-img">
+            <h3 class="home__card-title">Mordan</h3>
+
+            <div class="home__card-shadow"></div>
+        </article>
+
+
+
+
+
+        <article class="home__card">
+
+            <img src="~/Content/assets/img/adventure.jpeg" alt="home image" class="home__card-img">
+
+            <h3 class="home__card-title">Adventures</h3>
+
+            <div class="home__card-shadow"></div>
+        </article>*@
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- ---------------------------------------Category end------------------------  -->
+        <!-- ---------------------------------------About Section------------------------  -->
+
+
+        <section class="about section" id="about">
+
+
+            <div class="about__container container grid">
+
+                <div class="about__data">
+
+
+                    <h2 class="section__title">
+                        Learn More <br>
+                        About Travel
+                    </h2>
+
+                    <p class="about__description">
+                        All the trips around the world are a great
+                        pleasure and happiness for anyone, enjoy
+                        the sights when you travel the world. Travel
+                        safely and without worries, get your trip and
+                        explore the paradises of the world.
+                    </p>
+
+
+
+
+
+                    <a href="#" class="button">
+                        Explore Places <i class="ri-arrow-right-line"></i>
+                    </a>
+
+
+
+
+                </div>
+
+                <div class="about__image">
+
+                    <img src="~/Content/assets/img/learnMore.jpg" alt="about image" class="about__img">
+
+                    <div class="about__shadow"></div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- ---------------------------------------About End------------------------  -->
+        <!-- ---------------------------------------Popular Places------------------------  -->
+
+        <section class="popular section" id="popular">
+
+
+            <h2 class="section__title">
+                Enjoy The Beauty <br>
+                Of The India
+            </h2>
+
+
+
+
+
+
+
+            <div class="popular__container container grid">
+
+
+
+
+
+
+
+                @{
+
+                    if (ViewBag.Data != null)
+                    {
+
+
+                        foreach (var pla in ViewBag.Data.Rows)
+                        {
+
+
+                            <a href="/user/content?p_id=@pla[0]" style="text-decoration: none; color: hsl(0, 0%, 60%);">
+                                <article class="popular__card">
+
+                                    <div class="popular__image">
+                                        <img src="~/Content/landscape/@pla[20]" alt="popular image" class="popular__img" style="height:180px; width:400px;">
+
+                                        <div class="popular__shadow"></div>
+                                    </div>
+
+
+
+
+                                    <h2 class="popular__title">
+                                        @pla[1]
+                                    </h2>
+
+
+
+                                    <div class="popular__location">
+                                        <i class="ri-map-pin-line"></i>
+
+
+                                        <span>@pla[33]</span>
+
+
+                                    </div>
+                                </article>
+                            </a>
+
+                        }
+                    }
+                }
+                <article class="popular__card">
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/forest.jpeg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+
+                    </div>
+
+                    <h2 class="popular__title">
+                        Forest Reserves
+                    </h2>
+
+                    <div class="popular__location">
+
+                        <i class="ri-map-pin-line"></i>
+
+                        <span>Jharkhand</span>
+
+
+                    </div>
+
+                </article>
+
+                <article class="popular__card">
+
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/kashi.jpg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+                    </div>
+
+                    <h2 class="popular__title">
+
+
+                        Religious Places
+
+
+                    </h2>
+
+                    <div class="popular__location">
+
+
+                        <i class="ri-map-pin-line"></i>
+
+
+                        <span>Uttar Pradesh</span>
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <article class="popular__card">
+
+                    <div class="popular__image">
+                        <img src="~/Content/assets/img/mountain.jpg" alt="popular image" class="popular__img">
+
+                        <div class="popular__shadow"></div>
+                    </div>
+
+
+
+
+                    <h2 class="popular__title">
+                        Mountain
+                    </h2>
+
+
+
+                    <div class="popular__location">
+                        <i class="ri-map-pin-line"></i>
+
+
+                        <span>Shimla</span>
+
+
+                    </div>
+                </article>
+
+
+
+                <article class="popular__card">
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/forest.jpeg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+
+                    </div>
+
+                    <h2 class="popular__title">
+                        Forest Reserves
+                    </h2>
+
+                    <div class="popular__location">
+
+                        <i class="ri-map-pin-line"></i>
+
+                        <span>Jharkhand</span>
+
+
+                    </div>
+
+                </article>
+
+                <article class="popular__card">
+
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/kashi.jpg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+                    </div>
+
+                    <h2 class="popular__title">
+
+
+                        Religious Places
+
+
+                    </h2>
+
+                    <div class="popular__location">
+
+
+                        <i class="ri-map-pin-line"></i>
+
+
+                        <span>Uttar Pradesh</span>
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <article class="popular__card">
+
+                    <div class="popular__image">
+                        <img src="~/Content/assets/img/mountain.jpg" alt="popular image" class="popular__img">
+
+                        <div class="popular__shadow"></div>
+                    </div>
+
+
+
+
+                    <h2 class="popular__title">
+                        Mountain
+                    </h2>
+
+
+
+                    <div class="popular__location">
+                        <i class="ri-map-pin-line"></i>
+
+
+                        <span>Shimla</span>
+
+
+                    </div>
+                </article>
+
+
+
+                <article class="popular__card">
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/forest.jpeg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+
+                    </div>
+
+                    <h2 class="popular__title">
+                        Forest Reserves
+                    </h2>
+
+                    <div class="popular__location">
+
+                        <i class="ri-map-pin-line"></i>
+
+                        <span>Jharkhand</span>
+
+
+                    </div>
+
+                </article>
+
+                <article class="popular__card">
+
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/kashi.jpg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+                    </div>
+
+                    <h2 class="popular__title">
+
+
+                        Religious Places
+
+
+                    </h2>
+
+                    <div class="popular__location">
+
+
+                        <i class="ri-map-pin-line"></i>
+
+
+                        <span>Uttar Pradesh</span>
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </section>
+
+        <!-- ------------------------------ Popular End-------------------------------  -->
+        <!-- ---------------------------------------Explore Section------------------------  -->
+
+
+
+        <section class="explore section" id="explore">
+
+            <div class="explore__container">
+
+                <div class="explore__image">
+
+                    <img src="~/Content/assets/img/explore-beach.jpg" alt="explore image" class="explore__img">
+                    <div class="explore__shadow"></div>
+
+                </div>
+
+                <div class="explore__content container grid">
+
+
+                    <div class="explore__data">
+
+
+                        <h2 class="section__title">
+                            Explore The <br>
+                            Best Paradises in India
+                        </h2>
+
+                        <p class="explore__description">
+                            Exploring paradises such as islands and
+                            valleys when traveling the India is one of
+                            the greatest experiences when you travel, it
+                            offers you harmony and peace and you
+                            can enjoy it with great comfort.
+                        </p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ------------------------------Suggestion-------------------------------  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="popular section" id="popular">
+
+
+            <h2 class="section__title">
+                SuggestionSuggetion <br>
+
+            </h2>
+
+
+
+
+
+            <div class="popular__container container grid">
+
+
+                @{
+
+                    if (ViewBag.suggest != null)
+                    {
+
+
+                        foreach (var pla in ViewBag.suggest.Rows)
+                        {
+
+
+                            <a href="/user/content?p_id=@pla[0]" style="text-decoration: none; color: hsl(0, 0%, 60%);">
+                                <article class="popular__card">
+
+                                    <div class="popular__image">
+                                        <img src="~/Content/landscape/@pla[20]" alt="popular image" class="popular__img" style="height:180px; width:400px;">
+
+                                        <div class="popular__shadow"></div>
+                                    </div>
+
+
+
+
+                                    <h2 class="popular__title">
+                                        @pla[1]
+                                    </h2>
+
+
+
+                                    <div class="popular__location">
+                                        <i class="ri-map-pin-line"></i>
+
+
+                                        <span>@pla[33]</span>
+
+
+                                    </div>
+                                </article>
+                            </a>
+
+                        }
+                    }
+                }
+
+
+                <article class="popular__card">
+
+                    <div class="popular__image">
+
+
+                        <img src="~/Content/assets/img/forest.jpeg" alt="popular image" class="popular__img">
+
+
+                        <div class="popular__shadow"></div>
+
+
+                    </div>
+
+                    <h2 class="popular__title">
+                        Forest Reserves
+                    </h2>
+
+                    <div class="popular__location">
+
+                        <i class="ri-map-pin-line"></i>
+
+                        <span>Jharkhand</span>
+
+
+                    </div>
+
+                </article>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ------------------------------End Suggestion-------------------------------  -->
+        <!-- ---------------------------------------Contact Us Form------------------------  -->
+
+        <section class="join section" id="search">
+
+            <div class="join__container container grid">
+
+
+                <div class="join__data">
+
+                    <h2 class="section__title">
+
+                        Your Journey <br>
+                        Starts Here
+                    </h2>
+
+
+                    <p class="join__description">
+
+                    </p>
+
+
+
+
+
+
+
+                    @using (Html.BeginForm("searchhome", "user", FormMethod.Post))
+                    {
+
+                        <input type="text" name="search" placeholder="Search Your Desired Place" class="join__input" autocomplete="on">
+
+
+
+
+
+                        <input type="submit" value="Search Place" class="join__button button" />
+
+                        @*<i class="ri-arrow-right-line"></i>
+                        <button type="submit" class="join__button button">
+                            Search Place <i class="ri-arrow-right-line"></i>
+                        </button>*@
+
+
+
+
+                    }
+
+                </div>
+
+                <div class="join__image">
+                    <img src="~/Content/assets/img/join-island.jpg" alt="join image" class="join__img">
+                    <div class="join__shadow"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

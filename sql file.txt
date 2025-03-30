@@ -1,0 +1,238 @@
+USE [Minor]
+GO
+/****** Object:  Table [dbo].[Adduser]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Adduser](
+	[SR] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](255) NULL,
+	[password] [varchar](255) NULL,
+	[mail] [varchar](255) NULL,
+	[gender] [varchar](255) NULL,
+	[image] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[SR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[admin]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[admin](
+	[serial] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [varchar](255) NULL,
+	[password] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[serial] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AUser]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AUser](
+	[sr] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](255) NULL,
+	[mail] [varchar](255) NULL,
+	[mobile] [varchar](255) NULL,
+	[password] [varchar](255) NULL,
+	[icon] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[sr] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[caregories]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[caregories](
+	[name] [varchar](255) NULL,
+	[icon] [varchar](255) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[category]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[category](
+	[serNo] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](255) NULL,
+	[icon] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[serNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[contact]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[contact](
+	[serial] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](255) NULL,
+	[mail] [varchar](255) NULL,
+	[message] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[serial] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PLACE]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PLACE](
+	[p_id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [text] NULL,
+	[phrase] [varchar](8000) NULL,
+	[para1] [varchar](8000) NULL,
+	[para1b] [varchar](8000) NULL,
+	[tp_para] [varchar](8000) NULL,
+	[tp1_head] [varchar](8000) NULL,
+	[tp1_para] [varchar](8000) NULL,
+	[tp2_head] [varchar](8000) NULL,
+	[tp2_para] [varchar](8000) NULL,
+	[tp2_point1] [varchar](8000) NULL,
+	[tp2_point2] [varchar](8000) NULL,
+	[tp2_point3] [varchar](8000) NULL,
+	[tp3_head] [varchar](8000) NULL,
+	[tp3_para] [varchar](8000) NULL,
+	[tp3_point1] [varchar](8000) NULL,
+	[tp3_point2] [varchar](8000) NULL,
+	[tp3_point3] [varchar](8000) NULL,
+	[tp4_head] [varchar](8000) NULL,
+	[tp4_para] [varchar](8000) NULL,
+	[landscape] [varchar](8000) NULL,
+	[some_photo1] [varchar](8000) NULL,
+	[some_photo2] [varchar](8000) NULL,
+	[some_photo3] [varchar](8000) NULL,
+	[g1] [varchar](8000) NULL,
+	[g2] [varchar](8000) NULL,
+	[g3] [varchar](8000) NULL,
+	[g4] [varchar](8000) NULL,
+	[g5] [varchar](8000) NULL,
+	[g6] [varchar](8000) NULL,
+	[g7] [varchar](8000) NULL,
+	[g8] [varchar](8000) NULL,
+	[g9] [varchar](8000) NULL,
+	[state] [varchar](255) NULL,
+	[cat] [varchar](255) NULL,
+ CONSTRAINT [PK__PLACE__82E06B91DCF9E362] PRIMARY KEY CLUSTERED 
+(
+	[p_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[state]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[state](
+	[ser] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](255) NULL,
+	[icon] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ser] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[state_m]    Script Date: 28-02-2024 14:20:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[state_m](
+	[name] [varchar](255) NULL,
+	[icon] [varchar](255) NULL
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Adduser] ON 
+GO
+INSERT [dbo].[Adduser] ([SR], [name], [password], [mail], [gender], [image]) VALUES (1, N'the jatin', N'1', N'xyz@xyz.com', N'male', N'm2.jpg')
+GO
+INSERT [dbo].[Adduser] ([SR], [name], [password], [mail], [gender], [image]) VALUES (2, N'the jatin', N'1', N'xyz@xyz.com', N'male', N'm2.jpg')
+GO
+INSERT [dbo].[Adduser] ([SR], [name], [password], [mail], [gender], [image]) VALUES (3, N'xyz', N'2', N'xyz@gami.com', N'male', N'forest.jpeg')
+GO
+INSERT [dbo].[Adduser] ([SR], [name], [password], [mail], [gender], [image]) VALUES (4, N'xyz', N'11234', N'xyz@xyz.com', N'female', N'about-beach.jpg')
+GO
+SET IDENTITY_INSERT [dbo].[Adduser] OFF
+GO
+SET IDENTITY_INSERT [dbo].[admin] ON 
+GO
+INSERT [dbo].[admin] ([serial], [user_id], [password]) VALUES (1, N'adimin', N'admin')
+GO
+INSERT [dbo].[admin] ([serial], [user_id], [password]) VALUES (2, N'admin', N'admin')
+GO
+INSERT [dbo].[admin] ([serial], [user_id], [password]) VALUES (3, N'admin1', N'admin123')
+GO
+INSERT [dbo].[admin] ([serial], [user_id], [password]) VALUES (4, N'adminj27', N'@Jatin123')
+GO
+SET IDENTITY_INSERT [dbo].[admin] OFF
+GO
+SET IDENTITY_INSERT [dbo].[AUser] ON 
+GO
+INSERT [dbo].[AUser] ([sr], [name], [mail], [mobile], [password], [icon]) VALUES (1, N'abc', N'j@j.com', N'123456789', N'123', N'accounting.png')
+GO
+INSERT [dbo].[AUser] ([sr], [name], [mail], [mobile], [password], [icon]) VALUES (2, N'Raj', N'Raj@raj.com', N'', N'123', N'checked.png')
+GO
+INSERT [dbo].[AUser] ([sr], [name], [mail], [mobile], [password], [icon]) VALUES (3, N'j', N'y@y.com', N'', N'123', N'parents.png')
+GO
+INSERT [dbo].[AUser] ([sr], [name], [mail], [mobile], [password], [icon]) VALUES (4, N'Jatin Mishra', N'thejatin@gmail.com', N'123456789', N'123', N'm2.jpg')
+GO
+SET IDENTITY_INSERT [dbo].[AUser] OFF
+GO
+SET IDENTITY_INSERT [dbo].[category] ON 
+GO
+INSERT [dbo].[category] ([serNo], [name], [icon]) VALUES (2, N'cold', N'cold.jpeg')
+GO
+INSERT [dbo].[category] ([serNo], [name], [icon]) VALUES (4, N'spritual', N'kashi.jpg')
+GO
+INSERT [dbo].[category] ([serNo], [name], [icon]) VALUES (5, N'Monumental', N'monumental.jpeg')
+GO
+INSERT [dbo].[category] ([serNo], [name], [icon]) VALUES (6, N'Ancient', N'ancient.jpeg')
+GO
+SET IDENTITY_INSERT [dbo].[category] OFF
+GO
+SET IDENTITY_INSERT [dbo].[contact] ON 
+GO
+INSERT [dbo].[contact] ([serial], [name], [mail], [message]) VALUES (1, N'Jatin Mishra', N'thejatin@gmail.com', N'hi jatin here')
+GO
+SET IDENTITY_INSERT [dbo].[contact] OFF
+GO
+SET IDENTITY_INSERT [dbo].[PLACE] ON 
+GO
+INSERT [dbo].[PLACE] ([p_id], [name], [phrase], [para1], [para1b], [tp_para], [tp1_head], [tp1_para], [tp2_head], [tp2_para], [tp2_point1], [tp2_point2], [tp2_point3], [tp3_head], [tp3_para], [tp3_point1], [tp3_point2], [tp3_point3], [tp4_head], [tp4_para], [landscape], [some_photo1], [some_photo2], [some_photo3], [g1], [g2], [g3], [g4], [g5], [g6], [g7], [g8], [g9], [state], [cat]) VALUES (1, N'Kedarnath', N'Kedarnath is not just a destination, but a pilgrimage of the heartKedarnath is not just a destination, but a pilgrimage of the heart', N'The energy in Kedarnath is palpable, as if the mountains themselves are alive.The energy in Kedarnath is palpable, as if the mountains themselves are alive.', N'Kedarnath is a place where prayers become whispers in the wind.” “In Kedarnath, the mountains are guardians of the divine.”Kedarnath is a place where prayers become whispers in the wind.” “In Kedarnath, the mountains are guardians of the divine.”', N'Kedarnath is not just a destination, but a pilgrimage of the heartKedarnath is not just a destination, but a pilgrimage of the heart', N'kedatnath', N'Kedarnath is a town and Nagar Panchayat in Rudraprayag district of Uttarakhand, India, known primarily for the Kedarnath Temple. It is approximately 86 kilometres from Rudraprayag, the district headquarter. Kedarnath is the most remote of the four Chota Char Dham pilgrimage sitesKedarnath is a town and Nagar Panchayat in Rudraprayag district of Uttarakhand, India, known primarily for the Kedarnath Temple. It is approximately 86 kilometres from Rudraprayag, the district headquarter. Kedarnath is the most remote of the four Chota Char Dham pilgrimage sites', N'Badrinath', N'Kedarnath is a town and Nagar Panchayat in Rudraprayag district of Uttarakhand, India, known primarily for the Kedarnath Temple. It is approximately 86 kilometres from Rudraprayag, the district headquarter. Kedarnath is the most remote of the four Chota Char Dham pilgrimage sitesKedarnath is a town and Nagar Panchayat in Rudraprayag district of Uttarakhand, India, known primarily for the Kedarnath Temple. It is approximately 86 kilometres from Rudraprayag, the district headquarter. Kedarnath is the most remote of the four Chota Char Dham pilgrimage sites', N'badrinath temple', N'bheem pul', N'baramha kapal', N'Gangotri', N'Chota Char Dham Yamunotri Gangotri Kedarnath Badrinath Gangotri is a town and a Nagar Panchayat in Uttarkashi district in the state of Uttarakhand, India. It is 99 km from Uttarkashi, the main district headquarter.Chota Char Dham Yamunotri Gangotri Kedarnath Badrinath Gangotri is a town and a Nagar Panchayat in Uttarkashi district in the state of Uttarakhand, India. It is 99 km from Uttarkashi, the main district headquarter.', N'gangotri river', N'suyra kund', N'bhagrath shila', N'yamunotri', N'Yamunotri, also Jamnotri, is the source of the Yamuna River and the seat of the Goddess Yamuna in HinduismYamunotri, also Jamnotri, is the source of the Yamuna River and the seat of the Goddess Yamuna in Hinduism', N'landscape.jpg', N's3.jpg', N's2.jpg', N's1.jpg', N'g3.jpg', N's3.jpg', N's2.jpg', N'g4.jpg', N'g1.jpg', N's3.jpg', N's3.jpg', N'g3.jpg', N'g1.jpg', NULL, NULL)
+GO
+INSERT [dbo].[PLACE] ([p_id], [name], [phrase], [para1], [para1b], [tp_para], [tp1_head], [tp1_para], [tp2_head], [tp2_para], [tp2_point1], [tp2_point2], [tp2_point3], [tp3_head], [tp3_para], [tp3_point1], [tp3_point2], [tp3_point3], [tp4_head], [tp4_para], [landscape], [some_photo1], [some_photo2], [some_photo3], [g1], [g2], [g3], [g4], [g5], [g6], [g7], [g8], [g9], [state], [cat]) VALUES (3, N'India Gate', N'The India Gate is a war memorial located near the Kartavya path on the eastern edge of the "ceremonial axis" of New Delhi, formerly called Rajpath.', N' it commemorates the 70,000 Indian soldiers who lost their lives fighting for the British Army during the World War I.', N'??????? ???, ?? ?????? ?? ????????? ?? ????? ?? ???? ???? ????? ???? ??? ?? ????????? ???? ?? ????????? ?????? ??, ???? ????? ??? ???????? ??? ???? ??? ???? ?????? ?? ?????? ???????? ?? ????? ???? ??', N'The entire arch rises in phases from a modest foundation of red Bharatpur stone to a massive moulding.', N'India Gate', N'The entire arch rises in phases from a modest foundation of red Bharatpur stone to a massive moulding.', N'Rashpati Bhawan', N'The Rashtrapati Bhavan is the official residence of the President of India at the western end of Rajpath, Raisina Hill, New Delhi, India.', N'?????????? ??? ???? ????? ?? ?????????? ?? ?????? ???? ???', N'25 ????? 2022 ?????? ??????? ??????? ?????? ???? ?? ?????????? ????? ?? ??', N'???? ?????????? ??????? ?? ????? ??', N'Central Secretariat', N'Central Secretariat Service is the administrative civil service under Group A and Group B of the Central Civil Services of the executive branch of the Government of India.', N'They are governed by Central Secretariat Service Rules of 1962,', N'???????? ??????? ???? ???? ????? ?? ????????? ???? ?? ???????? ????? ???? ?? ????? ? ?? ????? ?? ?? ??? ????????? ????? ???? ???', N'?? 1962 ?? ???????? ??????? ???? ?????? ?????? ????? ???? ???', N'National Gallery of Modern Art', N'The National Gallery of Modern Art is the premier art gallery under Ministry of Culture, Government of India. The main museum at Jaipur House in New Delhi was established on 29 March 1954 by the Government of India', N'landscape ig.jpg', N'ig2.jpeg', N'rp2.jpg', N'cs.jpg', N'ig1.jpeg', N'ig2.jpeg', N'ig3.jpg', N'ig4.jpeg', N'rp2.jpg', N'ig2.jpeg', N'cs.jpg', N'ig2.jpeg', N'ig3.jpg', N'Delhi', N'Monumental')
+GO
+SET IDENTITY_INSERT [dbo].[PLACE] OFF
+GO
+SET IDENTITY_INSERT [dbo].[state] ON 
+GO
+INSERT [dbo].[state] ([ser], [name], [icon]) VALUES (2, N'Uttar Pradesh', N'up.jpg')
+GO
+INSERT [dbo].[state] ([ser], [name], [icon]) VALUES (3, N'Uttrakhand', N'uk.png')
+GO
+INSERT [dbo].[state] ([ser], [name], [icon]) VALUES (4, N'Delhi', N'delhi.png')
+GO
+SET IDENTITY_INSERT [dbo].[state] OFF
+GO
